@@ -1,11 +1,54 @@
-# stealth-ai-x-commerce-hiring-assignment
+# stealth-ai-x-commerce-hiring-assignment(AI Web Scrapper)
 
 ## Pre-requisites
-- Python 3.12
-- It is expected that you have docker installed on your system.
+- Docker is required to build and run the application containers. Make sure you **start the Docker Engine before running the commands**.
+- Ensure that ports `8000` (for the web server) and `27017` (for the database) are available and not in use by other applications.
 
-## Steps to run the code
-- docker-compose up --build
-- docker-compose down --> to stop and remove the containers and networks
-- docker-compose stop --> to stop the containers without removing them
-- docker-compose up --> to start the containers again
+## Introduction
+This project is a Web Scraper powered by AI, designed to extract product information from e-commerce websites. 
+It uses Python with FastAPI for the web server and MongoDB to store the LLM model history for a better model performane.
+
+## Steps to start up the application
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/abhiramd09/stealth-ai-x-commerce-hiring-assignment.git
+   ```
+   
+2. Navigate to the project directory and then build the Docker containers:
+   ```bash
+    docker-compose up --build
+    ```
+3. The pervious command will build the Docker images and start the containers. :
+   - The web server will be accessible at `http://localhost:8000`.
+     1. The webserver exposes the endpoint `GET /get-product-details`
+     2. This endpoint accepts a request with the following JSON body.
+         ```json
+        {
+          "country": "UK",
+          "query": "apple ipad pro"
+        }
+        ```
+     3. The endpoint returns a list of product details such as product link, price etc.
+   - The MongoDB database will be running on `mongodb://mongod:27017`.
+4. To stop the application, you can use the following commands:
+    - This command will stop the containers and **remove the networks** created by `docker-compose up`.
+      ```bash
+       docker-compose down
+      ```
+    - If you want to stop the containers without removing them, you can use:
+      ```bash
+       docker-compose stop
+      ```
+    - **Note:** When you stop the containers and restart them, the network ip gets changed. You have to manually remove the old network ip. The error looks like `ERROR: Network "stealth-ai-x-commerce-hiring-assignment_default" needs to be recreated - option "com.docker.network.enable_ipv6" has changed
+`In such cases, you can remove the network by running:
+      ```bash
+       docker network rm stealth-ai-x-commerce-hiring-assignment_default
+      ```
+
+5. To start the containers again, you can use:
+      ```bash
+       docker-compose up
+      ```
+
+## Note to the Judges
+- In some responses there might be a slight variation in the price you see in the response and in the product link. This is due to the dynamic nature of e-commerce websites where prices can change frequently and each user can see a different price of the same product.
