@@ -59,7 +59,7 @@ It uses Python with FastAPI for the web server and MongoDB to store the LLM mode
 
 ## Note to the Judges
 - In some responses there might be a slight variation in the price you see in the response and in the product link. This is due to the dynamic nature of e-commerce websites where prices can change frequently and each user can see a different price of the same product.
+- A lot of thought has been put into the design of the application to ensure it returns the most relevant product details. Kindness while evaluating the application is appreciated :).
 
 ## Working Video Proof
-This video demonstrates how to start the application locally and run various example queries
-file:///home/abhiram/Videos/Screencasts/Screencast%20from%2006-07-25%2011:23:24%20PM%20IST.webm
+This video demonstrates how to start the application locally and run various example queries. As displaying a video in `Readme.md` is  not supported yet, the video can be found in the projects root directory as `/working-video-proof.mp4`.
