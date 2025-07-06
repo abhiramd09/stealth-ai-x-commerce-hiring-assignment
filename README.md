@@ -18,6 +18,13 @@ It uses Python with FastAPI for the web server and MongoDB to store the LLM mode
    ```bash
     docker-compose up --build
     ```
+   If these logs appear, it means the application has started successfully and is ready to consume requests
+   ```
+   ai_webscrapper_app | INFO:     Started server process [1]
+   ai_webscrapper_app | INFO:     Waiting for application startup.
+   ai_webscrapper_app | INFO:     Application startup complete.
+   ai_webscrapper_app | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
 3. The pervious command will build the Docker images and start the containers. :
    - The web server will be accessible at `http://localhost:8000`.
      1. The webserver exposes the endpoint `GET /get-product-details`
