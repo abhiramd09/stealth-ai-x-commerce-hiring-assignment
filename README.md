@@ -6,3 +6,6 @@
 
 ## Steps to run the code
 - docker-compose up --build
+- docker-compose down --> to stop and remove the containers and networks
+- docker-compose stop --> to stop the containers without removing them
+- docker-compose up --> to start the containers again
