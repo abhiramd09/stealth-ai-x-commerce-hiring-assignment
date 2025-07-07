@@ -8,6 +8,12 @@
 This project is a Web Scraper powered by AI, designed to extract product information from e-commerce websites. 
 It uses Python with FastAPI for the web server and MongoDB to store the LLM model history for a better model performane.
 
+## Design Architecture
+- This app is a combination of google search with AI model scrapping.
+  1. **Google Search**: All the top product URLs are fetched by google using the query and country from the request.
+  2. **AI Scrapping**: All the fetched URLs are provided to the LLM for scrapping. The main reason to involve AI for scrapping is due to the broader problem statemnet. A single scrapper cannot fetch various product details globally. This is humanly not possible and requires a lot of coding. Hence leveraging AI for this use case seems valid.
+- MongoDB is introduced to store the history of the previous chat sessions for a better LLM model performance.
+
 ## Steps to start up the application
 1. Clone the repository:
    ```bash
@@ -59,7 +65,11 @@ It uses Python with FastAPI for the web server and MongoDB to store the LLM mode
 
 ## Note to the Judges
 - In some responses there might be a slight variation in the price you see in the response and in the product link. This is due to the dynamic nature of e-commerce websites where prices can change frequently and each user can see a different price of the same product.
-- A lot of thought has been put into the design of the application to ensure it returns the most relevant product details. Kindness while evaluating the application is appreciated :).
+- A lot of thought has been put into the design of the application to ensure it returns the most relevant product details. Kindness while evaluating the application is appreciated :).he m
+
+## Scope of Improvements
+- The model used is very generic which is trained on previous data. The pricing number in the response can vary 10 to 20% with the actual price on the website. This can be improved by training a custom model specific for scrapping purpose.
+- The model can be experimented with different types of prompts which might generate more accurate results.
 
 ## Working Video Proof
 This video demonstrates how to start the application locally and run various example queries. As displaying a video in `Readme.md` is  not supported yet, the video can be found in the projects root directory as `/working-video-proof.mp4`.
