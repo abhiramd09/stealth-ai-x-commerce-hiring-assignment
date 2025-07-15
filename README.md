@@ -1,4 +1,4 @@
-# stealth-ai-x-commerce-hiring-assignment(AI Web Scrapper)
+# AI Web Scrapper
 
 ## Pre-requisites
 - Docker is required to build and run the application containers. Make sure you **start the Docker Engine before running the commands**.
@@ -63,9 +63,8 @@ It uses Python with FastAPI for the web server and MongoDB to store the LLM mode
        docker-compose up
       ```
 
-## Note to the Judges
+## Note
 - In some responses there might be a slight variation in the price you see in the response and in the product link. This is due to the dynamic nature of e-commerce websites where prices can change frequently and each user can see a different price of the same product.
-- A lot of thought has been put into the design of the application to ensure it returns the most relevant product details. Kindness while evaluating the application is appreciated :).he m
 
 ## Scope of Improvements
 - The model used is very generic which is trained on previous data. The pricing number in the response can vary 10 to 20% with the actual price on the website. This can be improved by training a custom model specific for scrapping purpose.
